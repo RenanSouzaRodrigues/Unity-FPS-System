@@ -7,7 +7,9 @@ using UnityEngine.UI;
 namespace FPS {
     public class GameManager : MonoBehaviour {
         [SerializeField] private float _skyboxRotationSpeed = 1f;
-        [SerializeField] private Canvas _playerHUD;
+        [SerializeField] private Canvas _playerCanvas;
+        [SerializeField] private TextMesh _playerHealthText;
+        [SerializeField] private TextMesh _playerAmmoText;
 
         public void ChangeScene(string sceneName, bool loadAsync = false) {
             if (SceneManager.GetActiveScene().name == sceneName) return;
