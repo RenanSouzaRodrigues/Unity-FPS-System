@@ -31,11 +31,11 @@ Mesmo que a nomenclatura das classes seja inteiramente contextual, classes como 
 O sistema conta com um prefab que pode ser usado para iniciar seu projeto. 
 O prefab em questão é o GameObject que representa o Player, ja possuindo as funcionalidades necessárias. Caso queira simplesmente implementar os scripts em um GameObject ou outro Prefab de sua escolha, certifique-se de que seu GameObject ou Prefab possua a seguinte estrutura:
 
-|-> PlayerController (Empty Game Object)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----> Body<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----> Face (Opicional)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----> Camera<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----> GroundCheck<br>
+PlayerController (Empty Game Object)<br>
+    Body<br>
+    Face (Opicional)<br>
+    Camera<br>
+    GroundCheck<br>
 
 O sistema também conta com algumas classes que podem ser utilizadas como auxiliares para realizar a modularização do seu controle FPS.
 
@@ -48,7 +48,7 @@ Antes de mais nada é importante definir que todos os scripts seguem alguns padr
 Além disso é preciso se atentar para o fato de que as classes são distribuidas dentro de _**namespaces**_ que refletem diretamente a estrutura das pastas, como por exemplo a classe **FPSMovementController**, que se encontra dentro de **FPS\Player\FPSMovementController**
 
 ```cs
-namepace FPS.Player {
+namespace FPS.Player {
     class FPSMovementController : MonoBehaviour { ... } 
 }
 ```
