@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace FPS {
     public class GameManager : MonoBehaviour {
-        [SerializeField] private float _skyboxRotationSpeed = 1f;
+        // [SerializeField] private float _skyboxRotationSpeed = 1f;
         [SerializeField] private Canvas _playerHUD;
         [SerializeField] private Canvas _menuHUD;
         private Dictionary<string, Canvas> _gameCanvas = new Dictionary<string, Canvas>();
@@ -27,13 +27,9 @@ namespace FPS {
             }
         }
 
-        public void RenderSkyboxRotation() {
-            RenderSettings.skybox.SetFloat("_Rotation", Time.time * _skyboxRotationSpeed);
-        }
-
-        void Update() {
-            this.RenderSkyboxRotation();
-        }
+        // public void RenderSkyboxRotation() {
+        //     RenderSettings.skybox.SetFloat("_Rotation", Time.time * _skyboxRotationSpeed);
+        // }
 
         public void ShowHUD(string hudName) {
             if (this._gameCanvas.ContainsKey(hudName)) {
