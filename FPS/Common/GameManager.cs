@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FPS.ScriptableObjects;
 using UnityEngine.UI;
 
-namespace FPS {
+namespace FPS.Common {
     public class GameManager : MonoBehaviour {
-        // [SerializeField] private float _skyboxRotationSpeed = 1f;
+        [Header("Define all the game HUDS")]
         [SerializeField] private Canvas _playerHUD;
         [SerializeField] private Canvas _menuHUD;
         private Dictionary<string, Canvas> _gameCanvas = new Dictionary<string, Canvas>();
 
-        // For each new canvas added to the game, add it to the list in order to be able to hide/show them
+        // ------------ HUD METHODS ------------
         private void SetGameCanvas() {
             this._gameCanvas.Add("PlayerHUD", this._playerHUD);
             this._gameCanvas.Add("MenuHUD", this._menuHUD);
@@ -26,10 +27,6 @@ namespace FPS {
                 SceneManager.LoadScene(sceneName);
             }
         }
-
-        // public void RenderSkyboxRotation() {
-        //     RenderSettings.skybox.SetFloat("_Rotation", Time.time * _skyboxRotationSpeed);
-        // }
 
         public void ShowHUD(string hudName) {
             if (this._gameCanvas.ContainsKey(hudName)) {
