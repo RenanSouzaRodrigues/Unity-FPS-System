@@ -1214,6 +1214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7629367621717164352, guid: 90391520c82783948b1d5014f1b3ceea,
         type: 3}
+      propertyPath: _autoReload
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629367621717164352, guid: 90391520c82783948b1d5014f1b3ceea,
+        type: 3}
       propertyPath: _muzzeFlash
       value: 
       objectReference: {fileID: 747112878}

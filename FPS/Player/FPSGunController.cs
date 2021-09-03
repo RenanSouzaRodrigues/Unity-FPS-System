@@ -8,6 +8,9 @@ namespace FPS.Player {
         [Header("Define the gun properties")]
         [SerializeField] private GunProperties _gunProperties;
 
+        [Header("Define if the gun can auto reload")]
+        [SerializeField] private bool _autoReload = true;
+
         [Header("Define the global sound settings")]
         [SerializeField] private GlobalSoundProperties _globalSoundProperties;
 
@@ -26,6 +29,7 @@ namespace FPS.Player {
         [SerializeField] private AudioSource _gunReloadAudioSource;
         [SerializeField] private List<AudioClip> _gunShootSounds;
         [SerializeField] private List<AudioClip> _gunReloadSounds;
+        [SerializeField] private List<AudioClip> _gunEmptyClipSounds;
 
         [Header("Define the Pistol Animator")]
         [SerializeField] private Animator _gunAnimator;
@@ -57,8 +61,10 @@ namespace FPS.Player {
                     Debug.Log("No hit");
                 }
             }
-            else {
+            else if(this._autoReload) {
                 this.ReloadGun();
+            } else {
+                this.PlayGunEmptyClipSound();
             }
         }
 
@@ -88,6 +94,13 @@ namespace FPS.Player {
 
         private void PlayGunReloadSound() {
             this._gunReloadAudioSource.clip = this._gunReloadSounds[Random.Range(0, this._gunReloadSounds.Count)];
+            this._gunReloadAudioSource.loop = false;
+            this._gunReloadAudioSource.volume = this._globalSoundProperties.GetSfxVolume();
+            this._gunReloadAudioSource.Play();
+        }
+
+        private void PlayGunEmptyClipSound() {
+            this._gunReloadAudioSource.clip = this._gunEmptyClipSounds[Random.Range(0, this._gunEmptyClipSounds.Count)];
             this._gunReloadAudioSource.loop = false;
             this._gunReloadAudioSource.volume = this._globalSoundProperties.GetSfxVolume();
             this._gunReloadAudioSource.Play();
