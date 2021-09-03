@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FPS.ScriptableObjects;
 
 namespace FPS.Common {
-   public class PersonalSoundManager : MonoBehaviour {
+    public class PersonalSoundManager : MonoBehaviour {
+        [Header("Define the Global Sound Settings")]
+        [SerializeField] private GlobalSoundProperties _globalSoundProperties; 
+
         [Header("Define the Personal Audio Source component")]
         [SerializeField] private bool _autoDetectPersonalAudioSource = true;
         [SerializeField] private AudioSource _personalAudioSource;
@@ -17,6 +21,7 @@ namespace FPS.Common {
             if(!this._personalAudioSource.isPlaying) {
                 this._personalAudioSource.clip = this._listOfJumpSounds[Random.Range(0, this._listOfJumpSounds.Count)];
                 this._personalAudioSource.loop = false;
+                this._personalAudioSource.volume = this._globalSoundProperties.GetVoiceVolume();
                 this._personalAudioSource.Play();
             }
         }
@@ -25,6 +30,7 @@ namespace FPS.Common {
             if(!this._personalAudioSource.isPlaying) {
                 this._personalAudioSource.clip = this._listOfPainSounds[Random.Range(0, this._listOfPainSounds.Count)];
                 this._personalAudioSource.loop = false;
+                this._personalAudioSource.volume = this._globalSoundProperties.GetVoiceVolume();
                 this._personalAudioSource.Play();
             }
         }
@@ -33,6 +39,7 @@ namespace FPS.Common {
             if(!this._personalAudioSource.isPlaying) {
                 this._personalAudioSource.clip = this._listOfDeathSounds[Random.Range(0, this._listOfDeathSounds.Count)];
                 this._personalAudioSource.loop = false;
+                this._personalAudioSource.volume = this._globalSoundProperties.GetVoiceVolume();
                 this._personalAudioSource.Play();
             }
         }

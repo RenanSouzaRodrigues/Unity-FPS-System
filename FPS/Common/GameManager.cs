@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using FPS.ScriptableObjects;
-using UnityEngine.UI;
 
 namespace FPS.Common {
     public class GameManager : MonoBehaviour {
@@ -11,6 +9,13 @@ namespace FPS.Common {
         [SerializeField] private Canvas _playerHUD;
         [SerializeField] private Canvas _menuHUD;
         private Dictionary<string, Canvas> _gameCanvas = new Dictionary<string, Canvas>();
+
+        [Header("Define the Global Sound Settings")]
+        [SerializeField] private GlobalSoundProperties _globalSoundProperties;
+
+        [Header("Define the game manager sound manager")]
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip _mapBGMSong;
 
         // ------------ HUD METHODS ------------
         private void SetGameCanvas() {
@@ -35,6 +40,17 @@ namespace FPS.Common {
                 }
                 this._gameCanvas[hudName].enabled = true;
             }
+        }
+
+        public void PlayMapBGM() {
+            this._audioSource.clip = this._mapBGMSong;
+            this._audioSource.loop = true;
+            this._audioSource.volume = this._globalSoundProperties.GetMusicVolume();
+            this._audioSource.Play();
+        }
+
+        private void Start() {
+            this.PlayMapBGM();
         }
     }
 }
