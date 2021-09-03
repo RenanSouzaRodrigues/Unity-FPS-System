@@ -37,6 +37,7 @@ namespace FPS.Player {
         private void InitializeGunControllerConfig() {
             this._gunFireInput.Enable();
             this._gunReloadInput.Enable();
+            this.EnableGun();
         }
 
         private void ShootGun() {
