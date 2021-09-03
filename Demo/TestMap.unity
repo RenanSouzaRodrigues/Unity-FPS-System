@@ -451,6 +451,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2025963468}
     m_Modifications:
+    - target: {fileID: 299446867833790898, guid: b65ba0a2084ac474cbcd04f6e85983a7,
+        type: 3}
+      propertyPath: m_text
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 807651827652303209, guid: b65ba0a2084ac474cbcd04f6e85983a7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -650,6 +655,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800e3873c29f75844b44d626ffba4e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1478702511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 299446867833790898, guid: b65ba0a2084ac474cbcd04f6e85983a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1099886528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1526980365
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,6 +808,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2065698047 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9165772286038934674, guid: b65ba0a2084ac474cbcd04f6e85983a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1099886528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2108205081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7629367621717164352, guid: 90391520c82783948b1d5014f1b3ceea,
         type: 3}
+      propertyPath: _ammoText
+      value: 
+      objectReference: {fileID: 2065698047}
+    - target: {fileID: 7629367621717164352, guid: 90391520c82783948b1d5014f1b3ceea,
+        type: 3}
       propertyPath: _fpsCamera
       value: 
       objectReference: {fileID: 1544895971}
@@ -1232,6 +1266,11 @@ PrefabInstance:
       propertyPath: _gunFireRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7629367621717164352, guid: 90391520c82783948b1d5014f1b3ceea,
+        type: 3}
+      propertyPath: _maxAmmoText
+      value: 
+      objectReference: {fileID: 1478702511}
     - target: {fileID: 7629367621717164352, guid: 90391520c82783948b1d5014f1b3ceea,
         type: 3}
       propertyPath: _gunProperties

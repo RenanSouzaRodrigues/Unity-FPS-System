@@ -2,11 +2,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FPS.ScriptableObjects;
+using TMPro;
 
 namespace FPS.Player {
     public class FPSGunController : MonoBehaviour {
         [Header("Define the gun properties")]
         [SerializeField] private GunProperties _gunProperties;
+
+        [Header("Define the Debug properties")]
+        [SerializeField] private bool _showRaycastDebug;
+        [SerializeField] private bool _showGunDebug;
+
+        [Header("Define the Gun UI Elements")]
+        [SerializeField] private TextMeshProUGUI _ammoText;
+        [SerializeField] private TextMeshProUGUI _maxAmmoText;
 
         [Header("Define if the gun can auto reload")]
         [SerializeField] private bool _autoReload = true;
@@ -43,8 +52,13 @@ namespace FPS.Player {
         private void ShootGun() {
             if(this._gunProperties.ammoInClip > 0) {
                 this._gunProperties.ammoInClip--;
+
+                this._ammoText.text = this._gunProperties.ammoInClip.ToString();
+
                 this._muzzeFlash.Play();
+                
                 this.PlayGunShootSound();
+                
                 this._gunAnimator.Play("ShotAnimation");
                 
                 if(!this._gunProperties.isAutomatic) this._gunProperties.canShootAgain = false;
@@ -65,7 +79,7 @@ namespace FPS.Player {
             else if(this._autoReload) {
                 this.ReloadGun();
             } else {
-                this.PlayGunEmptyClipSound();
+                // this.PlayGunEmptyClipSound();
             }
         }
 
@@ -74,6 +88,7 @@ namespace FPS.Player {
             this._gunAnimator.Play("ReloadAnimation");
             this.PlayGunReloadSound();
             this._gunProperties.DoReloadMath();
+            this._ammoText.text = this._gunProperties.ammoInClip.ToString();
         }
 
         public void EnableGun() {
@@ -100,12 +115,12 @@ namespace FPS.Player {
             this._gunReloadAudioSource.Play();
         }
 
-        private void PlayGunEmptyClipSound() {
-            this._gunReloadAudioSource.clip = this._gunEmptyClipSounds[Random.Range(0, this._gunEmptyClipSounds.Count)];
-            this._gunReloadAudioSource.loop = false;
-            this._gunReloadAudioSource.volume = this._globalSoundProperties.GetSfxVolume();
-            this._gunReloadAudioSource.Play();
-        }
+        // private void PlayGunEmptyClipSound() {
+        //     this._gunReloadAudioSource.clip = this._gunEmptyClipSounds[Random.Range(0, this._gunEmptyClipSounds.Count)];
+        //     this._gunReloadAudioSource.loop = false;
+        //     this._gunReloadAudioSource.volume = this._globalSoundProperties.GetSfxVolume();
+        //     this._gunReloadAudioSource.Play();
+        // }
 
         private void Start() {
             this.InitializeGunControllerConfig();
@@ -119,6 +134,7 @@ namespace FPS.Player {
             }
 
             float shootInputValue = this._gunFireInput.ReadValue<float>();
+            Debug.Log(shootInputValue);
             if(this._gunProperties.isAutomatic) {
                 if(shootInputValue > 0 && Time.time >= this._gunProperties.nextTimeToFire) {
                     this._gunProperties.nextTimeToFire = Time.time + 1f / this._gunProperties.GetGunFireRate(); 
