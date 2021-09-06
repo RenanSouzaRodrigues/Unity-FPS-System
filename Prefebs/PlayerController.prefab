@@ -214,7 +214,6 @@ GameObject:
   - component: {fileID: 5670596321359584759}
   - component: {fileID: 5670596321359584758}
   - component: {fileID: 5670596321359584757}
-  - component: {fileID: 5670596321359584756}
   m_Layer: 0
   m_Name: FPSCamera
   m_TagString: Untagged
@@ -234,6 +233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3916395389223217353}
+  - {fileID: 3700763447036444538}
   m_Father: {fileID: 5670596321380577918}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -348,51 +348,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &5670596321359584756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5670596321359584714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d074b416117431848815e7fb589c09a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _xAxisAimMovementInput:
-    m_Name: X Axis Aim Movement Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 77369185-1c3b-46a8-91f1-08bbf782d65c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 78e28ba7-4704-4372-96d0-7931d906d1d7
-      m_Path: <Mouse>/delta/x
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: X Axis Aim Movement Input
-      m_Flags: 0
-  _yAxisAimMovementInput:
-    m_Name: Y Axis Aim Movement Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 19e8fec9-8b34-4ea8-80f9-2d13366194b6
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: fcb3db15-bd7c-41c2-8c2c-c77209967865
-      m_Path: <Mouse>/delta/y
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Y Axis Aim Movement Input
-      m_Flags: 0
-  _playerControllerBodyTransform: {fileID: 5670596321380577918}
 --- !u!1 &5670596321380577907
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,11 +358,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5670596321380577918}
   - component: {fileID: 5670596321380577917}
-  - component: {fileID: 7063393058553551085}
-  - component: {fileID: 4552803967184966529}
-  - component: {fileID: 5670596321380577919}
-  - component: {fileID: 7469709305593452618}
-  - component: {fileID: 5670596321380577916}
+  - component: {fileID: 2989217782233872368}
+  - component: {fileID: 1912926232784872311}
+  - component: {fileID: 8439331452807530767}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -451,130 +404,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &7063393058553551085
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5670596321380577907}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.50258476
-  m_Height: 1.5255827
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.27600747, z: 0.0025847554}
---- !u!135 &4552803967184966529
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5670596321380577907}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.44
-  m_Center: {x: 0, y: 0.59, z: 0}
---- !u!82 &5670596321380577919
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5670596321380577907}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &7469709305593452618
+--- !u!114 &2989217782233872368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -583,135 +413,233 @@ MonoBehaviour:
   m_GameObject: {fileID: 5670596321380577907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 800e3873c29f75844b44d626ffba4e0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c49d2a589d14d64dab2f361386122c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _globalSoundProperties: {fileID: 0}
-  _autoDetectPersonalAudioSource: 1
-  _personalAudioSource: {fileID: 0}
-  _listOfJumpSounds:
-  - {fileID: 8300000, guid: a375679030029aa48a93c38b7ac1969e, type: 3}
-  - {fileID: 8300000, guid: 877cae0f9fad1a448b13eda6d473fa63, type: 3}
-  - {fileID: 8300000, guid: b7189a7ac481c12468bdc092fdff1411, type: 3}
-  - {fileID: 8300000, guid: a5a5a55459edd9845a343795b915ed94, type: 3}
-  - {fileID: 8300000, guid: 10ccde6c4c33b714ba7dc7bfb1743aa6, type: 3}
-  - {fileID: 8300000, guid: 63c7406fa7a81a84a89a26200bf19294, type: 3}
-  - {fileID: 8300000, guid: 68f41b896d1ef0f4993e2099f41643c4, type: 3}
-  _listOfPainSounds:
-  - {fileID: 8300000, guid: d52fd3b82aa7bc6469b87c15d92880ad, type: 3}
-  - {fileID: 8300000, guid: ae33741b6958ecf4684a7b1f6a7e2364, type: 3}
-  - {fileID: 8300000, guid: 752816050d560e1418b08e5b1552a4b5, type: 3}
-  - {fileID: 8300000, guid: 13f6f3142c831ef488c3d45b9e572f29, type: 3}
-  - {fileID: 8300000, guid: 8c066d0d0b6635f4d866c96bc0256d06, type: 3}
-  - {fileID: 8300000, guid: 486deb1df9e502a4390bb62dc0807738, type: 3}
-  _listOfDeathSounds:
-  - {fileID: 8300000, guid: aaf733b27ab0f5e42b7a5342940a7aa3, type: 3}
-  - {fileID: 8300000, guid: 16c399a63b07f0444ac8658a96cf04db, type: 3}
-  - {fileID: 8300000, guid: d79867d40f90a714d955c6dfeb57165e, type: 3}
---- !u!114 &5670596321380577916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5670596321380577907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55844f2802cef4478f436b397a3df26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attributes: {fileID: 11400000, guid: b76535631f76f2546872179cd2155fa7, type: 2}
-  _usePersonalAudioManager: 1
-  _autoImportPersonalAudioManager: 0
-  _personalSoundManager: {fileID: 0}
-  _controllerMovementInput:
-    m_Name: Controller Movement Input
+  _movementInputs:
+    m_Name: Movement Inputs
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 627f691b-b912-4a45-a420-0594b8be9a3a
+    m_Id: c65aa6b9-07c3-447b-923c-061bcb8445be
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: 8cdf5d9c-06b8-4304-b608-77698093fc8c
+    - m_Name: Keyboard
+      m_Id: c1041d02-82b0-4938-ac13-080d5fa4d5fb
       m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Controller Movement Input
+      m_Action: Movement Inputs
       m_Flags: 4
     - m_Name: up
-      m_Id: 1eb8b3fe-a335-4a17-aee8-c89e2f74daed
+      m_Id: b0a8a231-c048-49e7-85da-e43622e35dc6
       m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Controller Movement Input
+      m_Action: Movement Inputs
       m_Flags: 8
     - m_Name: down
-      m_Id: 94fadfc8-f3b1-41ae-a9ab-b50fcb8fd20b
+      m_Id: eb9ff73c-f43f-4c78-8ae8-ebf2ea3e26f9
       m_Path: <Keyboard>/s
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Controller Movement Input
+      m_Action: Movement Inputs
       m_Flags: 8
     - m_Name: left
-      m_Id: 0984ba1c-f6b6-4c73-8f83-23bc76bfec89
+      m_Id: f09e339f-4dac-45f6-8bd1-9578aaa048bc
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Controller Movement Input
+      m_Action: Movement Inputs
       m_Flags: 8
     - m_Name: right
-      m_Id: 19b75371-4b56-4eeb-9e6c-c1917d759fad
+      m_Id: ff65b3e9-a7e6-42d4-8f97-256a1f535150
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Controller Movement Input
+      m_Action: Movement Inputs
       m_Flags: 8
-  _controllerRunInput:
-    m_Name: Controller Run Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 6eda3d25-7a53-4385-8f7b-f4a359d1f7e8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 50a10a9d-2d33-4bee-8881-393aff0fd5a4
-      m_Path: <Keyboard>/leftAlt
+    - m_Name: Joystick
+      m_Id: bc20746d-d7d9-4e99-87be-a866d67a4942
+      m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Controller Run Input
-      m_Flags: 0
-  _controllerJumpInput:
-    m_Name: Controller Jump Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 7435fc63-14db-4160-b356-ced8e84904df
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 7dc31dea-af1d-46e3-837f-cb28a75e0282
-      m_Path: <Keyboard>/space
+      m_Action: Movement Inputs
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 7dbfe167-30a2-44f7-a686-fed151818171
+      m_Path: <Gamepad>/leftStick/up
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Controller Jump Input
-      m_Flags: 0
-  _characterController: {fileID: 5670596321380577917}
+      m_Action: Movement Inputs
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 50beff19-ac2e-4463-bf22-c6421f645f1a
+      m_Path: <Gamepad>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Inputs
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 58363c1d-f181-418f-9802-5a4b3b4fe4d4
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Inputs
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 527c74fc-00a3-43f3-921a-ac57620eb5fa
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Inputs
+      m_Flags: 8
   _groundCheck: {fileID: 5670596320824482782}
   _groundLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  _displayPlayerBodyAndFace: 1
+  _displayPlayerBodyAndFace: 0
   _playerCapsuleBody: {fileID: 5670596320134286369}
   _PlayerCubeFace: {fileID: 5670596320566390999}
+  _attributes: {fileID: 11400000, guid: b76535631f76f2546872179cd2155fa7, type: 2}
+--- !u!114 &1912926232784872311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670596321380577907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f48ac6d21a4cb4292a37b910f90a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xAxisAimMovementInput:
+    m_Name: X Axis Aim Movement Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 08f411d8-ce86-425c-9492-b0094fd38d18
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c0f4c0b8-9d69-48f1-9559-7d3a401b35c2
+      m_Path: <Mouse>/delta/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: X Axis Aim Movement Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: ff5fa0d0-8317-4f1c-b177-3215b2729a1f
+      m_Path: <Gamepad>/rightStick/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: X Axis Aim Movement Input
+      m_Flags: 0
+  _yAxisAimMovementInput:
+    m_Name: Y Axis Aim Movement Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1ee1c85a-350d-4d08-a829-ed3e7beda910
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 930e2f78-f319-46bb-9cf9-dc2e4da20900
+      m_Path: <Mouse>/delta/y
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Y Axis Aim Movement Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 42591a06-9b8e-4515-b238-12c4a97842fe
+      m_Path: <Gamepad>/rightStick/y
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Y Axis Aim Movement Input
+      m_Flags: 0
+  _characterRootTransform: {fileID: 5670596321380577918}
+  _camera: {fileID: 0}
+  _lockCursor: 1
+  _aimSensitivity: 25
+--- !u!114 &8439331452807530767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670596321380577907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be3f1e62fbf3fd14dab0b86bfb568c54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runInput:
+    m_Name: Run Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bc3833b9-8c28-46e3-87ad-5eb2ffba319d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+--- !u!1 &6874223415974292862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3700763447036444538}
+  - component: {fileID: 899927048955856910}
+  m_Layer: 0
+  m_Name: CrossHairTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3700763447036444538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874223415974292862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5670596321359584715}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &899927048955856910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874223415974292862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764e06f2ab9f9594a85dca487b34108c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fpsCameraTransform: {fileID: 0}
 --- !u!82 &5227733152552226784
 AudioSource:
   m_ObjectHideFlags: 0
@@ -808,50 +736,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7629367621717164352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7358121861500480652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74af4f5851d69546a80990f35dc6e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gunProperties: {fileID: 0}
-  _globalSoundProperties: {fileID: 0}
-  _fpsCamera: {fileID: 0}
-  _gunFireInput:
-    m_Name: Gun Fire Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 2bae59ae-396b-4e1f-91cf-96382750993d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 3551c396-c2d1-496e-bcf4-44aa22a71c6b
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Gun Fire Input
-      m_Flags: 0
-  _gunReloadInput:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-  _muzzeFlash: {fileID: 0}
-  _gunAudioSource: {fileID: 0}
-  _gunShootSounds: []
-  _gunReloadSounds: []
-  _gunAnimator: {fileID: 0}
 --- !u!82 &9037644472050492254
 AudioSource:
   m_ObjectHideFlags: 0
