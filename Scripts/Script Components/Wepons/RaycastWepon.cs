@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FPS.ScriptableObjects;
 using TMPro;
 
-namespace FPS.Player {
-    public class FPSGunController : MonoBehaviour {
+namespace FPS.ScriptComponents.Weapons {
+    public class RaycastWepon : MonoBehaviour {
         [Header("Define the gun properties")]
         [SerializeField] private GunProperties _gunProperties;
 
@@ -18,6 +19,9 @@ namespace FPS.Player {
 
         [Header("Define the global sound settings")]
         [SerializeField] private GlobalSoundProperties _globalSoundProperties;
+
+        [Header("Define the raycast Camera position")]
+        [SerializeField] private Transform _fpsCameraTransform;
 
         [Header("Define the wepon ray cast origin and Cross Hair Target")]
         [SerializeField] private Transform _rayCastOrigin;
@@ -115,26 +119,24 @@ namespace FPS.Player {
             this._gunReloadAudioSource.Play();
         }
 
-        // private void PlayGunEmptyClipSound() {
-        //     this._gunReloadAudioSource.clip = this._gunEmptyClipSounds[Random.Range(0, this._gunEmptyClipSounds.Count)];
-        //     this._gunReloadAudioSource.loop = false;
-        //     this._gunReloadAudioSource.volume = this._globalSoundProperties.GetSfxVolume();
-        //     this._gunReloadAudioSource.Play();
-        // }
-
         private void Start() {
             this.InitializeGunControllerConfig();
         }
 
         private void Update()
         {
+            Ray cameraRay = new Ray(this._fpsCameraTransform.position, this._fpsCameraTransform.forward);
+            RaycastHit hit;
+
+            Physics.Raycast(cameraRay, out hit);
+            this._rayDestination.position = hit.point;
+
             float reloadInputValue = this._gunReloadInput.ReadValue<float>();
             if(reloadInputValue > 0 && !this._gunProperties.isReloading()) {
                 this.ReloadGun();
             }
 
             float shootInputValue = this._gunFireInput.ReadValue<float>();
-            Debug.Log(shootInputValue);
             if(this._gunProperties.IsAutomatic()) {
                 if(shootInputValue > 0 && Time.time >= this._gunProperties.GetNextTimeToFire()) {
                     this._gunProperties.SetNextTimeToFire(Time.time + 1f / this._gunProperties.GetGunFireRate()); 

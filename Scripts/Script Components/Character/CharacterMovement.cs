@@ -26,7 +26,9 @@ namespace FPS.ScriptComponents.Character {
         private readonly float _groundDistanceRadius = 0.5f;
         private Vector3 _characterVelocity;
         private CharacterRun _characterRunEventSubscriber;
+        private CharacterJump _characterJumpEventSubscriber;
         private bool _isRunning = false;
+        private bool _isJumping = false;
 
         private void Initialize() {
             this._movementInputs.Enable();
@@ -38,6 +40,10 @@ namespace FPS.ScriptComponents.Character {
             this._characterRunEventSubscriber = GetComponent<CharacterRun>();
             if(this._characterRunEventSubscriber != null) {
                 this._characterRunEventSubscriber.OnRun += (sender, isRunning) => {  this._isRunning = isRunning; };
+            }
+            this._characterJumpEventSubscriber = GetComponent<CharacterJump>();
+            if(this._characterJumpEventSubscriber != null) {
+                this._characterJumpEventSubscriber.OnJump += (sender, isJumping) => {  this._isJumping = isJumping; };
             }
         }
 
@@ -55,6 +61,16 @@ namespace FPS.ScriptComponents.Character {
             this._characterController.Move(this._characterVelocity * Time.deltaTime);
         }
 
+        private void HandleJump() {
+            // Controller can jump using simple physics too. Just use v = sqrRoot(h * -2 * g)
+            if (this._isJumping && this._isGrounded) {
+                this._characterVelocity.y = Mathf.Sqrt(
+                    this._attributes.GetJumpHeight() * -2f * this._attributes.GetGraivityForce()
+                );
+            }
+            _characterController.Move(this._characterVelocity * Time.deltaTime);
+        }
+
         private void Start() {
             this.Initialize();
         }
@@ -62,6 +78,7 @@ namespace FPS.ScriptComponents.Character {
         private void Update() {
             this.HandleGroundCheckAndPhysics();
             this.HandleMovement();
+            this.HandleJump();
         }
     } 
 }

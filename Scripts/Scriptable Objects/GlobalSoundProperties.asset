@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GlobalSoundProperties
   m_EditorClassIdentifier: 
   _masterVolume: 1
-  _musicVolume: 0.487
-  _sfxVolume: 0.587
-  _voiceVolume: 0.651
+  _musicVolume: 1
+  _sfxVolume: 1
+  _voiceVolume: 1
   _ambientVolume: 1

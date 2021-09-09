@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27e86379eae7b444a8008e2176f0e2c5, type: 3}
-  m_Name: FPSAttributes
+  m_Name: PlayerAttributes
   m_EditorClassIdentifier: 
   _isDead: 0
   _health: 100

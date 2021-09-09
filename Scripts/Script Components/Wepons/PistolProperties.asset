@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95f2c2483f5f3944b97e4c320618b4a, type: 3}
   m_Name: PistolProperties
   m_EditorClassIdentifier: 
-  _gunName: Block Pistol
+  _gunName: 
   _gunFireRate: 2
   _gunMinimalDamage: 10
   _gunMaximalDamage: 15
   _gunCriticalMultiplier: 1.3
   _gunRange: 100
-  _gunImpactForce: 150
+  _gunImpactForce: 100
   _isAutomatic: 0
   _nextTimeToFire: 0
   _canShootAgain: 1
   _ammoInCarry: 60
   _maxAmmoCarryCapacity: 60
-  ammoInClip: 12
+  ammoInClip: 0
   _maxAmmoInClip: 12
   _isReloading: 0
